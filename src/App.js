@@ -6,7 +6,14 @@ function App () {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('hello world');
+		let amount = parseInt(count);
+		if (amount <= 0) {
+			amount = 1;
+		}
+		if (amount > data.length) {
+			amount = data.length;
+		}
+		setParagraphs(data.slice(0, amount));
 	};
 
 	return (
@@ -26,8 +33,9 @@ function App () {
 				</button>
 			</form>
 			<article className="lorem-text">
-				<p>lorem ipsums 1</p>
-				<p>lorem ipsums 2</p>
+				{paragraphs.map((paragraph, index) => {
+					return <p key={index}>{paragraph}</p>;
+				})}
 			</article>
 		</section>
 	);
