@@ -25,6 +25,10 @@ function App () {
 					generate
 				</button>
 			</form>
+			<article className="lorem-text">
+				<p>lorem ipsums 1</p>
+				<p>lorem ipsums 2</p>
+			</article>
 		</section>
 	);
 }
